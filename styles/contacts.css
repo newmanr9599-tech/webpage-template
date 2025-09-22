@@ -1,0 +1,119 @@
+
+.image-background{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../image/contact-bg.jpg);
+    background-size: cover;
+
+    filter: grayscale(100%) sepia(100%) blur(3px);
+    mix-blend-mode: screen;
+}
+.overlay-1{
+    margin-top: 10%;
+}
+.overlay-2{
+    margin-top: 20%;
+    margin-left: 75%;
+}
+.overlay-3{
+    margin-top: 30%;
+    margin-left: 40%;
+}
+.overlay-4{
+    margin-top: 10%;
+    margin-left: 50%;
+}
+
+
+
+main{
+    position: relative;
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.background-shape{
+    width: 50%;
+    height: 20%;
+    position: fixed;
+    z-index: -1;
+    background: linear-gradient(to bottom, black, rgb(79, 79, 79));
+    opacity: 0.85;
+    background-color: black;
+    box-shadow: 0 0 20px 0 rgba(50, 50, 50, 0.75); 
+    mix-blend-mode:color-burn;
+      animation: left-to-right 3s ease;
+
+}
+
+
+.details-container{
+    margin-right: 5%;
+    animation: shape-on-load 4s ease;
+}
+
+.details-container .text-1{
+    text-decoration: none;
+    font-size: 5vw;
+    font-family: "Bebas Neue", cursive;
+    animation: left-to-right 3s ease, fade-in 2s ease;
+    transition: 100ms ease;
+}
+
+.text-1:hover{
+   font-size: 6vw;
+}
+
+@keyframes thematic-break{
+    from{
+        width: 0%;
+    }
+    to{
+        width: 100%;
+    }
+}
+
+@keyframes shape-on-load {
+    from{
+        transform: translateX(-10%) translateY(-10%);
+    }
+    to{
+        transform: translateX(0%) translateY(0%);
+    }
+}
+@keyframes left-to-right {
+  from{
+        transform: translateX(-10%) ;
+    }
+    to{
+        transform: translateX(0%);
+    }
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    main{
+        padding-top: 50%;
+    }
+    .background-shape{
+        height: 25%;
+    }
+}

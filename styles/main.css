@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lumanosimo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700&display=swap');
+
+body{
+    background-color: black;
+    overflow: hidden;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+
+    user-select: none;
+
+    --site-max-width: 1300px;
+
+    font-family: "Smooch Sans", sans-serif;
+    font-size: 2vw;
+}
+nav{
+    padding: 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    margin: 0 auto;
+    padding: 5px 10px;
+
+    animation: top-to-down 2s ease;
+}
+nav a{
+    font-family: "Bebas Neue";
+}
+.background-nav{
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(to right, black, rgb(79, 79, 79));
+    opacity: 0.8;
+
+    width: 100%;
+    height: 100%;
+
+    transition: 250ms ease;
+}
+.link-container{
+    list-style: none;
+
+    display: flex;
+    gap: 10px;
+    max-width: var(--site-max-width);
+}
+.link-button{
+    padding: 5px 10px;
+    border-radius: 10px;
+    
+    transition: 200ms ease;
+}
+
+.link-button a, .webpage-title {
+    text-decoration: none;
+}
+.webpage-title{
+    transition: 200ms ease;
+}
+.webpage-title a{
+    text-decoration: none;
+    font-size: 3.5vw;
+}
+
+.link-container:hover + .background-nav, .webpage-title:hover ~ .background-nav {
+  opacity: 0.9;
+}
+
+nav hr{
+    width: 0vw;
+    visibility: hidden;
+    transition: 200ms ease;
+}
+
+
+.link-button:hover{
+  scale: 1.2;
+   hr{
+    visibility: visible;
+    width: 7vw;
+  }
+}
+.webpage-title:hover{
+  scale: 0.95;
+  hr{
+    visibility: visible;
+    width: 10vw;
+  }
+}
+
+.duotone{
+    z-index: -1;
+    background-color: black; 
+    position: absolute;
+    mix-blend-mode: color;
+
+    width: 300px;
+
+    height: 300px;
+    
+   animation: left-to-right 1s ease;
+}
+
+@keyframes top-to-down{
+    from{
+        transform: translateY(-20%)
+    }
+    to{
+        transform: translateY(0%)
+    }
+}
+
+
+@keyframes left-to-right {
+  from{
+        transform: translateX(-10%) ;
+    }
+    to{
+        transform: translateX(0%);
+    }
+}

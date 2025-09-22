@@ -1,0 +1,151 @@
+.image-background{
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../image/education-bg.jpg);
+    background-size: cover;
+
+    filter: grayscale(100%) sepia(100%) blur(3px);
+    mix-blend-mode: screen;
+}
+
+.overlay-1{
+    margin-top: 20%;
+}
+.overlay-2{
+    margin-top: 20%;
+    margin-left: 55%;
+}
+.overlay-3{
+    margin-top: 30%;
+    margin-left: 50%;
+}
+.overlay-4{
+    margin-top: 30%;
+    margin-left: 40%;
+}
+
+
+main{
+    padding: 5vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1vh;
+}
+
+.hobby-container{
+    opacity: 0.8;
+    background-color: black;
+    width: 7vw;
+    height: 13vh;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    background: linear-gradient(to bottom, black, rgb(79, 79, 79));
+    box-shadow: 0 0 20px 0 rgba(50, 50, 50, 0.75); 
+    border-radius: 100%;
+
+    transition: 600ms ease;
+    animation: drop-down-2 1s ease;
+}
+.hobby-container *:not(.heading){
+    visibility: hidden;
+}
+.hobby-container:hover{
+    width: 31vw;
+    height: 31vh;
+    border-radius: 10px;
+     *{
+    visibility: visible;
+}
+    hr{
+        animation: fade-in 4s ease, thematic-break 3s ease;
+    }
+    li, img:not(.heading){
+        animation: drop-down 1s ease;
+    }
+}
+
+
+.hobby-container .heading{
+    margin-top: 1.5vh;
+    max-width: 10vw;
+    max-height: 10vh;
+} 
+.hobby-container li, p{
+    font-size: 1.2vw;
+} 
+
+.hobby-container hr{
+    width: 25vw;
+}
+.hobby-container .image-gallery{
+    margin-top: 2vh;
+    height: 46vh;
+    width: 36vw;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.image-gallery img{
+
+    max-height: 16vh;
+    max-width: 18vw;
+    border-radius: 5px;
+
+    box-shadow: 0 0 10px 0 rgba(50, 50, 50, 0.75); 
+}
+
+@keyframes thematic-break{
+    from{
+        width: 0vh;
+    }
+    to{
+        width: 25vw;
+    }
+}
+
+@keyframes fade-in {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 0.8;
+    }
+}
+
+@keyframes drop-down{
+    from{
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+@keyframes drop-down-2{
+    from{
+        transform: translateY(-100%);
+    }
+    to{
+        transform: translateY(0%);
+    }
+}
+
+@media only screen and (max-width: 600px){
+    main{
+        gap: 10vh 10vw;
+    }
+    .hobby-container{
+        width: 15vw;
+        height: 10vh;
+    }
+}
